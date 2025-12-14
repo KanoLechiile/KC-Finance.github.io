@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KC Finance | Simple Financial Help</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background: #0b3c5d;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    section {
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #0b3c5d;
+    }
+    .cta {
+      background: #2e8b57;
+      color: white;
+      padding: 15px 25px;
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+    }
+    footer {
+      background: #0b3c5d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 15px 18px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>KC Finance</h1>
+  <p>You don’t need a big loan. You need the right help.</p>
+  <a href="#start" class="cta">Check What You Qualify For</a>
+</header>
+
+<section>
+  <div class="box">
+    <ul>
+      <li>Always short of money before month-end?</li>
+      <li>Need less than P500 and don’t know who to trust?</li>
+      <li>Feeling stressed about debt or credit?</li>
+    </ul>
+    <p>
+      You’re not irresponsible. You were never shown a better way.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Start Here</h2>
+  <div class="box">
+    <ul>
+      <li>Small emergency loans (up to P500)</li>
+      <li>Higher limits for trusted & repeat clients</li>
+      <li>Credit counselling & financial guidance</li>
+      <li>Debt advice & money management support</li>
+    </ul>
+    <a href="#start" class="cta">Start with a Free Financial Check</a>
+  </div>
+</section>
+
+<section>
+  <h2>Why People Trust KC Finance</h2>
+  <div class="box">
+    <ul>
+      <li>Confidential and respectful</li>
+      <li>Transparent fees</li>
+      <li>No hidden charges</li>
+      <li>Simple explanations</li>
+      <li>Community-focused support</li>
+    </ul>
+  </div>
+</section>
+
+<section id="start">
+  <h2>Get Started</h2>
+  <div class="box">
+    <p>
+      Chat privately with us. No pressure. No judgement.
+    </p>
+    <p>
+      📞 WhatsApp: <strong>76328862</strong>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>
+    KC Finance provides financial guidance, small loans, and support services.
+    We are not a bank. Loan approvals, amounts, and terms are subject to review.
+    Some services may be offered through partners or referrals.
+    All client information is handled confidentially and respectfully.
+  </p>
+  <p>© KC Finance</p>
+</footer>
+
+<a class="whatsapp" 
+   href="https://wa.me/26776328862?text=Hello%20KC%20Finance,%20I%20need%20financial%20assistance."
+   target="_blank">💬</a>
+
+</body>
+</html>
