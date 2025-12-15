@@ -1,54 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>KC Finance | Simple Financial Help</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
+    :root {
+      --primary: #0b3c5d;
+      --secondary: #2e8b57;
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f4f6f8;
-      color: #222;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
+
     header {
-      background: #0b3c5d;
+      background: linear-gradient(135deg, #0b3c5d, #164b6f);
       color: white;
-      padding: 50px 20px;
+      padding: 64px 20px;
       text-align: center;
     }
-    section {
-      padding: 30px 20px;
-      max-width: 900px;
-      margin: auto;
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
     }
-    h1, h2 {
-      color: #0b3c5d;
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 25px;
+      opacity: 0.95;
     }
+
     .cta {
-      background: #2e8b57;
+      background: var(--secondary);
       color: white;
-      padding: 15px 25px;
-      display: inline-block;
-      margin-top: 15px;
+      padding: 14px 28px;
+      border-radius: 999px;
       text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
+      font-weight: 600;
+      display: inline-block;
     }
-    .box {
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 6px;
+
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 50px 20px;
     }
-    footer {
-      background: #0b3c5d;
-      color: white;
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 25px;
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
+      color: var(--primary);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 30px 20px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    footer p {
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0.9;
     }
 
     /* WhatsApp Button */
@@ -56,89 +111,114 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #25D366;
+      background: #25d366;
       color: white;
-      padding: 15px 18px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
       text-decoration: none;
-      font-size: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      z-index: 999;
     }
   </style>
 </head>
 
 <body>
-
-<header>
-  <h1>KC Finance</h1>
-  <p>You don’t need a big loan. You need the right help.</p>
-  <a href="#start" class="cta">Check What You Qualify For</a>
-</header>
-
-<section>
-  <div class="box">
-    <ul>
-      <li>Always short of money before month-end?</li>
-      <li>Need less than P500 and don’t know who to trust?</li>
-      <li>Feeling stressed about debt or credit?</li>
-    </ul>
+  <header>
+    <h1>KC Finance</h1>
     <p>
-      You’re not irresponsible. You were never shown a better way.
+      Simple, confidential financial help for everyday people — small loans,
+      guidance, and real solutions.
     </p>
-  </div>
-</section>
+    <a href="#start" class="cta">Check What You Qualify For</a>
+  </header>
 
-<section>
-  <h2>Start Here</h2>
-  <div class="box">
-    <ul>
-      <li>Small emergency loans (up to P500)</li>
-      <li>Higher limits for trusted & repeat clients</li>
-      <li>Credit counselling & financial guidance</li>
-      <li>Debt advice & money management support</li>
-    </ul>
-    <a href="#start" class="cta">Start with a Free Financial Check</a>
-  </div>
-</section>
+  <section>
+    <h2>Does this sound like you?</h2>
+    <div class="grid">
+      <div class="card">
+        <p>Running out of money before month-end?</p>
+      </div>
+      <div class="card">
+        <p>Need less than P500 and don’t know who to trust?</p>
+      </div>
+      <div class="card">
+        <p>Feeling stressed about debt or poor credit?</p>
+      </div>
+    </div>
+  </section>
 
-<section>
-  <h2>Why People Trust KC Finance</h2>
-  <div class="box">
-    <ul>
-      <li>Confidential and respectful</li>
-      <li>Transparent fees</li>
-      <li>No hidden charges</li>
-      <li>Simple explanations</li>
-      <li>Community-focused support</li>
-    </ul>
-  </div>
-</section>
+  <section>
+    <h2>Start here</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Small Loans</h3>
+        <p class="muted">
+          Emergency loans up to P500, with higher limits for trusted repeat
+          clients.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Financial Guidance</h3>
+        <p class="muted">
+          Clear, judgment-free advice to help you regain control of your money.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Debt Support</h3>
+        <p class="muted">
+          Practical help understanding debt and reducing financial pressure.
+        </p>
+      </div>
+    </div>
+  </section>
 
-<section id="start">
-  <h2>Get Started</h2>
-  <div class="box">
+  <section>
+    <h2>Why people trust KC Finance</h2>
+    <div class="grid">
+      <div class="card">
+        <p>Confidential and respectful</p>
+      </div>
+      <div class="card">
+        <p>Transparent fees</p>
+      </div>
+      <div class="card">
+        <p>Simple explanations</p>
+      </div>
+      <div class="card">
+        <p>Community-focused support</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="start">
+    <h2>Get started</h2>
+    <div class="card" style="text-align: center;">
+      <p class="muted">
+        Chat privately with us on WhatsApp. No pressure. No judgement.
+      </p>
+      <p><strong>WhatsApp: 76328862</strong></p>
+    </div>
+  </section>
+
+  <footer>
     <p>
-      Chat privately with us. No pressure. No judgement.
+      KC Finance provides financial guidance, small loans, and support services.
+      We are not a bank. Loan approvals, amounts, and terms are subject to review.
+      Some services may be offered through partners or referrals. All client
+      information is handled confidentially and respectfully.
     </p>
-    <p>
-      📞 WhatsApp: <strong>76328862</strong>
-    </p>
-  </div>
-</section>
+  </footer>
 
-<footer>
-  <p>
-    KC Finance provides financial guidance, small loans, and support services.
-    We are not a bank. Loan approvals, amounts, and terms are subject to review.
-    Some services may be offered through partners or referrals.
-    All client information is handled confidentially and respectfully.
-  </p>
-  <p>© KC Finance</p>
-</footer>
-
-<a class="whatsapp" 
-   href="https://wa.me/26776328862?text=Hello%20KC%20Finance,%20I%20need%20financial%20assistance."
-   target="_blank">💬</a>
-
+  <a
+    class="whatsapp"
+    href="https://wa.me/26776328862?text=Hello%20KC%20Finance,%20I%20need%20financial%20assistance."
+    target="_blank"
+    >💬</a
+  >
 </body>
 </html>
