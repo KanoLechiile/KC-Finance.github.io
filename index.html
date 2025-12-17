@@ -54,9 +54,34 @@
 
     /* ===================== HERO ===================== */
     header {
-      padding: 110px 20px 100px;
+      padding: 120px 20px 110px;
       text-align: center;
       position: relative;
+      background:
+        linear-gradient(180deg, rgba(248,250,252,0.92), rgba(248,250,252,0.85)),
+        radial-gradient(900px 400px at 20% -10%, rgba(59,130,246,0.15), transparent 60%),
+        radial-gradient(900px 400px at 80% 10%, rgba(34,197,94,0.12), transparent 60%),
+        url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1600&q=70');
+      background-size: cover;
+      background-position: center;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(248,250,252,0.4), rgba(248,250,252,0.95));
+      pointer-events: none;
+    }
+
+    body.dark header {
+      background:
+        linear-gradient(180deg, rgba(2,6,23,0.85), rgba(2,6,23,0.95)),
+        radial-gradient(900px 400px at 20% -10%, rgba(59,130,246,0.18), transparent 60%),
+        radial-gradient(900px 400px at 80% 10%, rgba(34,197,94,0.14), transparent 60%),
+        url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1600&q=70');
+      background-size: cover;
+      background-position: center;
     }
 
     header h1 {
@@ -173,11 +198,49 @@
       cursor: pointer;
       box-shadow: var(--shadow-soft);
     }
+  
+
+    /* ===================== CONTACT BAR ===================== */
+    .contact-bar {
+      position: sticky;
+      top: 0;
+      z-index: 998;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(100,116,139,0.15);
+      font-size: 0.85rem;
+    }
+
+    .contact-bar a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .contact-text {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
   </style>
 </head>
 
 <body>
   <div class="toggle" onclick="toggleDark()">🌙 / ☀️</div>
+
+  <!-- TOP CONTACT BAR -->
+  <div class="contact-bar">
+    <span class="contact-text">Talk to us privately:</span>
+    <a href="https://wa.me/26776328862" target="_blank">WhatsApp</a>
+    <a href="mailto:lechiilekano@gmail.com">Email</a>
+    <a href="https://www.facebook.com/Kano%20Lechiile" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/forthesakeoftopics" target="_blank">Instagram</a>
+  </div>
 
   <!-- HERO -->
   <header>
@@ -317,5 +380,4 @@
     }
   </script>
 </body>
-  </html>
-  
+</html>
