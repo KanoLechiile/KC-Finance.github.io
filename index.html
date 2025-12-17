@@ -54,17 +54,40 @@
 
     /* ===================== HERO ===================== */
     header {
-      padding: 120px 20px 110px;
-      text-align: center;
-      position: relative;
-      background:
-        linear-gradient(180deg, rgba(248,250,252,0.96), rgba(248,250,252,0.92)),
-        radial-gradient(900px 400px at 20% -10%, rgba(59,130,246,0.12), transparent 65%),
-        radial-gradient(900px 400px at 80% 10%, rgba(34,197,94,0.10), transparent 65%),
-        url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1600&q=70');
-      background-size: cover;
-      background-position: center;
-    }
+  padding: 120px 20px 110px;
+  text-align: center;
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(248,250,252,0.85), rgba(248,250,252,0.95)),
+    radial-gradient(900px 400px at 20% -10%, rgba(59,130,246,0.14), transparent 60%),
+    radial-gradient(900px 400px at 80% 10%, rgba(34,197,94,0.12), transparent 60%),
+    url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1600&q=70');
+  background-size: cover;
+  background-position: center;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(248,250,252,0.15), rgba(248,250,252,0.85));
+  pointer-events: none;
+}
+
+header > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.dark header {
+  background:
+    linear-gradient(180deg, rgba(2,6,23,0.75), rgba(2,6,23,0.9)),
+    radial-gradient(900px 400px at 20% -10%, rgba(59,130,246,0.18), transparent 60%),
+    radial-gradient(900px 400px at 80% 10%, rgba(34,197,94,0.14), transparent 60%),
+    url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1600&q=70');
+  background-size: cover;
+  background-position: center;
+}
 
     header::after {
       content: "";
@@ -267,13 +290,18 @@
 
   <!-- HERO -->
   <header>
-    <h1>KC Finance</h1>
-    <p>
-      Private financial assistance for working people who need clarity,
-      not pressure.
-    </p>
-    <a href="#trust" class="cta">See How This Works</a>
-  </header>
+  <div class="top-contact">
+    <span>Talk to us privately:</span>
+    <a href="https://wa.me/26776328862" target="_blank">WhatsApp</a>
+    <a href="mailto:lechiilekano@gmail.com">Email</a>
+    <a href="https://instagram.com/forthesakeoftopics" target="_blank">Instagram</a>
+    <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+  </div>
+
+  <h1>KC Finance</h1>
+  <p class="hero-sub">Private financial assistance for working people who need clarity, not pressure.</p>
+  <a href="#how" class="cta">See How This Works</a>
+</header>
 
   <!-- TRUST BLOCK -->
   <section id="trust">
@@ -403,5 +431,4 @@
     }
   </script>
 </body>
-        </html>
-        
+</html>
