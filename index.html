@@ -58,9 +58,32 @@
       text-align: center;
       position: relative;
       background:
-        linear-gradient(180deg, rgba(248,250,252,0.92), rgba(248,250,252,0.85)),
-        radial-gradient(900px 400px at 20% -10%, rgba(59,130,246,0.15), transparent 60%),
-        radial-gradient(900px 400px at 80% 10%, rgba(34,197,94,0.12), transparent 60%),
+        linear-gradient(180deg, rgba(248,250,252,0.96), rgba(248,250,252,0.92)),
+        radial-gradient(900px 400px at 20% -10%, rgba(59,130,246,0.12), transparent 65%),
+        radial-gradient(900px 400px at 80% 10%, rgba(34,197,94,0.10), transparent 65%),
+        url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1600&q=70');
+      background-size: cover;
+      background-position: center;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(248,250,252,0.3), rgba(248,250,252,0.85));
+      pointer-events: none;
+    }
+
+    header > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    body.dark header {
+      background:
+        linear-gradient(180deg, rgba(2,6,23,0.85), rgba(2,6,23,0.92)),
+        radial-gradient(900px 400px at 20% -10%, rgba(59,130,246,0.18), transparent 65%),
+        radial-gradient(900px 400px at 80% 10%, rgba(34,197,94,0.14), transparent 65%),
         url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1600&q=70');
       background-size: cover;
       background-position: center;
@@ -238,7 +261,7 @@
     <span class="contact-text">Talk to us privately:</span>
     <a href="https://wa.me/26776328862" target="_blank">WhatsApp</a>
     <a href="mailto:lechiilekano@gmail.com">Email</a>
-    <a href="https://www.facebook.com/Kano%20Lechiile" target="_blank">Facebook</a>
+    <a href="" target="_blank">Facebook</a>
     <a href="https://www.instagram.com/forthesakeoftopics" target="_blank">Instagram</a>
   </div>
 
@@ -380,4 +403,5 @@
     }
   </script>
 </body>
-</html>
+        </html>
+        
