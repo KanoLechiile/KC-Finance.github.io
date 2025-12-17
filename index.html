@@ -2,85 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>KC Finance | Simple Financial Help</title>
+  <title>KC Finance | Financial Help You Can Trust</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
+    /* =====================
+       DESIGN SYSTEM
+    ====================== */
     :root {
       --primary: #0b3c5d;
+      --primary-2: #123e63;
       --secondary: #2e8b57;
+      --accent: #e6f2ec;
+
       --bg: #f4f6f8;
+      --bg-soft: #eef1f4;
       --card: #ffffff;
       --text: #1f2933;
       --muted: #6b7280;
+
+      --shadow-soft: 0 10px 25px rgba(0,0,0,0.08);
+      --shadow-strong: 0 18px 40px rgba(0,0,0,0.12);
     }
 
-    * {
-      box-sizing: border-box;
+    body.dark {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --primary: #3b82f6;
+      --secondary: #22c55e;
     }
+
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(11,60,93,0.12), transparent 60%),
+        radial-gradient(1000px 500px at 90% 10%, rgba(46,139,87,0.10), transparent 60%),
+        var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
+      transition: background 0.4s ease, color 0.3s ease;
     }
 
+    /* =====================
+       HEADER / HERO
+    ====================== */
     header {
-      background: linear-gradient(135deg, #0b3c5d, #164b6f);
+      background:
+        linear-gradient(135deg, rgba(11,60,93,0.95), rgba(18,62,99,0.95)),
+        url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
       color: white;
-      padding: 64px 20px;
+      padding: 90px 20px 80px;
       text-align: center;
+      position: relative;
     }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
+      z-index: 0;
+    }
+
+    header * { position: relative; z-index: 1; }
 
     header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
+      font-size: 2.6rem;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
     }
 
     header p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 25px;
+      max-width: 620px;
+      margin: 0 auto 30px;
+      font-size: 1.15rem;
       opacity: 0.95;
     }
 
     .cta {
-      background: var(--secondary);
+      background: linear-gradient(135deg, var(--secondary), #3aa876);
       color: white;
-      padding: 14px 28px;
+      padding: 14px 32px;
       border-radius: 999px;
       text-decoration: none;
       font-weight: 600;
-      display: inline-block;
+      box-shadow: var(--shadow-strong);
     }
 
+    /* =====================
+       LAYOUT
+    ====================== */
     section {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 50px 20px;
+      padding: 70px 20px;
     }
 
     h2 {
-      font-size: 1.6rem;
-      margin-bottom: 25px;
       text-align: center;
+      font-size: 1.7rem;
+      margin-bottom: 35px;
       color: var(--primary);
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      gap: 24px;
     }
 
     .card {
-      background: var(--card);
-      padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.65)),
+        var(--card);
+      backdrop-filter: blur(6px);
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    body.dark .card {
+      background: linear-gradient(180deg, rgba(31,41,55,0.9), rgba(31,41,55,0.7));
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-strong);
     }
 
     .card h3 {
@@ -88,137 +144,121 @@
       color: var(--primary);
     }
 
-    .muted {
-      color: var(--muted);
-    }
+    .muted { color: var(--muted); }
 
+    /* =====================
+       FOOTER
+    ====================== */
     footer {
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
       color: white;
-      padding: 30px 20px;
+      padding: 40px 20px;
       font-size: 0.85rem;
-      line-height: 1.5;
     }
 
     footer p {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       opacity: 0.9;
     }
 
-    /* WhatsApp Button */
+    /* =====================
+       WHATSAPP BUTTON
+    ====================== */
     .whatsapp {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #25d366;
+      background: linear-gradient(135deg, #25d366, #1ebd5a);
       color: white;
-      width: 56px;
-      height: 56px;
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 24px;
       text-decoration: none;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
       z-index: 999;
+    }
+
+    /* =====================
+       DARK MODE TOGGLE
+    ====================== */
+    .toggle {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      background: var(--card);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      color: var(--text);
     }
   </style>
 </head>
 
 <body>
+  <div class="toggle" onclick="toggleDark()">🌙 / ☀️</div>
+
   <header>
     <h1>KC Finance</h1>
-    <p>
-      Simple, confidential financial help for everyday people — small loans,
-      guidance, and real solutions.
-    </p>
-    <a href="#start" class="cta">Check What You Qualify For</a>
+    <p>Confidential, respectful financial help — designed for real life, not banks.</p>
+    <a href="#start" class="cta">See How We Can Help</a>
   </header>
 
   <section>
-    <h2>Does this sound like you?</h2>
+    <h2>When money pressure hits</h2>
     <div class="grid">
-      <div class="card">
-        <p>Running out of money before month-end?</p>
-      </div>
-      <div class="card">
-        <p>Need less than P500 and don’t know who to trust?</p>
-      </div>
-      <div class="card">
-        <p>Feeling stressed about debt or poor credit?</p>
-      </div>
+      <div class="card"><p>Unexpected expenses before payday</p></div>
+      <div class="card"><p>Need under P500 and nowhere safe to ask</p></div>
+      <div class="card"><p>Debt stress affecting your peace of mind</p></div>
     </div>
   </section>
 
   <section>
-    <h2>Start here</h2>
+    <h2>Our core services</h2>
     <div class="grid">
       <div class="card">
         <h3>Small Loans</h3>
-        <p class="muted">
-          Emergency loans up to P500, with higher limits for trusted repeat
-          clients.
-        </p>
+        <p class="muted">Up to P500, with flexibility for trusted repeat clients.</p>
       </div>
       <div class="card">
         <h3>Financial Guidance</h3>
-        <p class="muted">
-          Clear, judgment-free advice to help you regain control of your money.
-        </p>
+        <p class="muted">Judgment-free conversations about money decisions.</p>
       </div>
       <div class="card">
         <h3>Debt Support</h3>
-        <p class="muted">
-          Practical help understanding debt and reducing financial pressure.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Why people trust KC Finance</h2>
-    <div class="grid">
-      <div class="card">
-        <p>Confidential and respectful</p>
-      </div>
-      <div class="card">
-        <p>Transparent fees</p>
-      </div>
-      <div class="card">
-        <p>Simple explanations</p>
-      </div>
-      <div class="card">
-        <p>Community-focused support</p>
+        <p class="muted">Understanding debt and reducing pressure step by step.</p>
       </div>
     </div>
   </section>
 
   <section id="start">
-    <h2>Get started</h2>
-    <div class="card" style="text-align: center;">
-      <p class="muted">
-        Chat privately with us on WhatsApp. No pressure. No judgement.
-      </p>
+    <h2>Start privately</h2>
+    <div class="card" style="text-align:center;">
+      <p class="muted">Message us directly. Confidential. Respectful. Clear.</p>
       <p><strong>WhatsApp: 76328862</strong></p>
     </div>
   </section>
 
   <footer>
     <p>
-      KC Finance provides financial guidance, small loans, and support services.
-      We are not a bank. Loan approvals, amounts, and terms are subject to review.
-      Some services may be offered through partners or referrals. All client
-      information is handled confidentially and respectfully.
+      KC Finance is not a bank. Services are subject to review and availability.
+      Some offerings may be provided through partners or referrals.
+      All information shared is handled confidentially and respectfully.
     </p>
   </footer>
 
-  <a
-    class="whatsapp"
-    href="https://wa.me/26776328862?text=Hello%20KC%20Finance,%20I%20need%20financial%20assistance."
-    target="_blank"
-    >💬</a
-  >
+  <a class="whatsapp" href="https://wa.me/26776328862" target="_blank">💬</a>
+
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
 </body>
 </html>
