@@ -7,196 +7,171 @@
 
   <style>
     /* =====================
-       DESIGN SYSTEM
+       EDUCATE.AI-LEVEL DESIGN SYSTEM
+       Premium • Minimal • Confident
     ====================== */
     :root {
-      --primary: #0b3c5d;
-      --primary-2: #123e63;
-      --secondary: #2e8b57;
-      --accent: #e6f2ec;
+      --ink: #0b1220;
+      --ink-soft: #1f2937;
+      --accent: #3b82f6; /* electric blue */
+      --accent-2: #22c55e; /* calm green */
 
-      --bg: #f4f6f8;
-      --bg-soft: #eef1f4;
-      --card: #ffffff;
-      --text: #1f2933;
-      --muted: #6b7280;
+      --bg: #f8fafc;
+      --bg-glass: rgba(255,255,255,0.72);
+      --bg-dark: #020617;
 
-      --shadow-soft: 0 10px 25px rgba(0,0,0,0.08);
-      --shadow-strong: 0 18px 40px rgba(0,0,0,0.12);
+      --text: #020617;
+      --muted: #64748b;
+
+      --radius-lg: 22px;
+      --radius-md: 14px;
+
+      --shadow-soft: 0 12px 30px rgba(2,6,23,0.08);
+      --shadow-strong: 0 30px 60px rgba(2,6,23,0.18);
     }
 
     body.dark {
-      --bg: #0f172a;
-      --bg-soft: #111827;
-      --card: #1f2937;
+      --bg: #020617;
+      --bg-glass: rgba(15,23,42,0.75);
       --text: #e5e7eb;
-      --muted: #9ca3af;
-      --primary: #3b82f6;
-      --secondary: #22c55e;
+      --muted: #94a3b8;
+      --ink: #e5e7eb;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background:
-        radial-gradient(1200px 600px at 10% -10%, rgba(11,60,93,0.12), transparent 60%),
-        radial-gradient(1000px 500px at 90% 10%, rgba(46,139,87,0.10), transparent 60%),
+        radial-gradient(900px 400px at 10% -10%, rgba(59,130,246,0.12), transparent 60%),
+        radial-gradient(900px 400px at 90% 10%, rgba(34,197,94,0.10), transparent 60%),
         var(--bg);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.7;
       transition: background 0.4s ease, color 0.3s ease;
     }
 
-    /* =====================
-       HEADER / HERO
-    ====================== */
+    /* ===================== HERO ===================== */
     header {
-      background:
-        linear-gradient(135deg, rgba(11,60,93,0.95), rgba(18,62,99,0.95)),
-        url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1400&q=80');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 90px 20px 80px;
+      padding: 110px 20px 100px;
       text-align: center;
       position: relative;
     }
 
-    header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
-      z-index: 0;
+    header h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      margin-bottom: 18px;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, var(--ink), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    header * { position: relative; z-index: 1; }
-
-    header h1 {
-      font-size: 2.6rem;
-      margin-bottom: 12px;
-      letter-spacing: 0.5px;
+    body.dark header h1 {
+      background: linear-gradient(135deg, #e5e7eb, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     header p {
-      max-width: 620px;
-      margin: 0 auto 30px;
+      max-width: 640px;
+      margin: 0 auto 40px;
       font-size: 1.15rem;
-      opacity: 0.95;
+      color: var(--muted);
     }
 
     .cta {
-      background: linear-gradient(135deg, var(--secondary), #3aa876);
+      background: linear-gradient(135deg, var(--accent), #60a5fa);
       color: white;
-      padding: 14px 32px;
+      padding: 16px 36px;
       border-radius: 999px;
       text-decoration: none;
       font-weight: 600;
       box-shadow: var(--shadow-strong);
     }
 
-    /* =====================
-       LAYOUT
-    ====================== */
+    /* ===================== SECTIONS ===================== */
     section {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 70px 20px;
+      padding: 90px 20px;
     }
 
     h2 {
       text-align: center;
-      font-size: 1.7rem;
-      margin-bottom: 35px;
-      color: var(--primary);
+      font-size: 1.9rem;
+      margin-bottom: 45px;
+      letter-spacing: -0.3px;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
+      gap: 26px;
     }
 
     .card {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.65)),
-        var(--card);
-      backdrop-filter: blur(6px);
-      padding: 28px;
-      border-radius: 18px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(10px);
+      padding: 34px;
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow-soft);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    body.dark .card {
-      background: linear-gradient(180deg, rgba(31,41,55,0.9), rgba(31,41,55,0.7));
-    }
-
     .card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
       box-shadow: var(--shadow-strong);
     }
 
     .card h3 {
       margin-top: 0;
-      color: var(--primary);
+      font-size: 1.15rem;
+      letter-spacing: -0.2px;
     }
 
     .muted { color: var(--muted); }
 
-    /* =====================
-       FOOTER
-    ====================== */
+    /* ===================== FOOTER ===================== */
     footer {
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      color: white;
-      padding: 40px 20px;
+      border-top: 1px solid rgba(100,116,139,0.15);
+      padding: 50px 20px;
       font-size: 0.85rem;
+      color: var(--muted);
     }
 
-    footer p {
-      max-width: 1100px;
-      margin: auto;
-      opacity: 0.9;
-    }
+    footer p { max-width: 1100px; margin: auto; }
 
-    /* =====================
-       WHATSAPP BUTTON
-    ====================== */
+    /* ===================== UI ELEMENTS ===================== */
     .whatsapp {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 22px;
+      right: 22px;
       background: linear-gradient(135deg, #25d366, #1ebd5a);
       color: white;
-      width: 58px;
-      height: 58px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 24px;
       text-decoration: none;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+      box-shadow: var(--shadow-strong);
       z-index: 999;
     }
 
-    /* =====================
-       DARK MODE TOGGLE
-    ====================== */
     .toggle {
       position: fixed;
-      top: 16px;
-      right: 16px;
-      background: var(--card);
+      top: 18px;
+      right: 18px;
+      background: var(--bg-glass);
       border-radius: 999px;
       padding: 6px 14px;
       font-size: 0.8rem;
       cursor: pointer;
       box-shadow: var(--shadow-soft);
-      color: var(--text);
     }
   </style>
 </head>
@@ -204,52 +179,133 @@
 <body>
   <div class="toggle" onclick="toggleDark()">🌙 / ☀️</div>
 
+  <!-- HERO -->
   <header>
     <h1>KC Finance</h1>
-    <p>Confidential, respectful financial help — designed for real life, not banks.</p>
-    <a href="#start" class="cta">See How We Can Help</a>
+    <p>
+      Private financial assistance for working people who need clarity,
+      not pressure.
+    </p>
+    <a href="#trust" class="cta">See How This Works</a>
   </header>
 
-  <section>
-    <h2>When money pressure hits</h2>
+  <!-- TRUST BLOCK -->
+  <section id="trust">
+    <h2>Before money, respect</h2>
     <div class="grid">
-      <div class="card"><p>Unexpected expenses before payday</p></div>
-      <div class="card"><p>Need under P500 and nowhere safe to ask</p></div>
-      <div class="card"><p>Debt stress affecting your peace of mind</p></div>
+      <div class="card">
+        <h3>Confidential by default</h3>
+        <p class="muted">
+          Conversations stay private. No shaming. No exposure. Your situation
+          is handled with dignity.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Small by design</h3>
+        <p class="muted">
+          We work with realistic amounts (up to P500) to reduce risk, pressure,
+          and long-term damage.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Human review</h3>
+        <p class="muted">
+          Decisions are not automated. A real person looks at your case before
+          anything is agreed.
+        </p>
+      </div>
     </div>
   </section>
 
+  <!-- PSYCHOLOGY SECTION -->
   <section>
-    <h2>Our core services</h2>
+    <h2>Why most people get this wrong</h2>
     <div class="grid">
       <div class="card">
-        <h3>Small Loans</h3>
-        <p class="muted">Up to P500, with flexibility for trusted repeat clients.</p>
+        <p>
+          Most financial problems are not caused by irresponsibility — they are
+          caused by timing.
+        </p>
       </div>
       <div class="card">
-        <h3>Financial Guidance</h3>
-        <p class="muted">Judgment-free conversations about money decisions.</p>
+        <p>
+          When pressure hits, people borrow too much, too fast, from the wrong
+          places.
+        </p>
       </div>
       <div class="card">
-        <h3>Debt Support</h3>
-        <p class="muted">Understanding debt and reducing pressure step by step.</p>
+        <p>
+          KC Finance exists to interrupt that cycle before it gets worse.
+        </p>
       </div>
     </div>
   </section>
 
+  <!-- SERVICES (FRAMED AS PATH) -->
+  <section>
+    <h2>How we help</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Short-term relief</h3>
+        <p class="muted">
+          Small, controlled loans meant to stabilize — not trap — you.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Financial clarity</h3>
+        <p class="muted">
+          Clear explanations around debt, spending, and next steps — without
+          judgment.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Ongoing support</h3>
+        <p class="muted">
+          Trusted clients can access higher limits and longer-term assistance
+          over time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHORITY WITHOUT CLAIMS -->
+  <section>
+    <h2>This is not for everyone</h2>
+    <div class="grid">
+      <div class="card">
+        <p>
+          If you are looking for instant cash with no responsibility, this is
+          not for you.
+        </p>
+      </div>
+      <div class="card">
+        <p>
+          If you want clarity, privacy, and realistic help — you are in the
+          right place.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section id="start">
     <h2>Start privately</h2>
-    <div class="card" style="text-align:center;">
-      <p class="muted">Message us directly. Confidential. Respectful. Clear.</p>
+    <div class="card" style="text-align: center;">
+      <p class="muted">
+        The first step is a conversation. Nothing is agreed until you are
+        comfortable.
+      </p>
       <p><strong>WhatsApp: 76328862</strong></p>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>
-      KC Finance is not a bank. Services are subject to review and availability.
-      Some offerings may be provided through partners or referrals.
-      All information shared is handled confidentially and respectfully.
+      KC Finance provides small-scale financial assistance and guidance. We are
+      not a bank. Loan amounts, terms, and availability are subject to review.
+      Some services may be offered through referrals or partners. All
+      information shared is treated confidentially and respectfully.
     </p>
   </footer>
 
@@ -261,4 +317,5 @@
     }
   </script>
 </body>
-</html>
+  </html>
+  
