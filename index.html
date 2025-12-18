@@ -2,433 +2,256 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>KC Finance | Financial Help You Can Trust</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KC Finance | Private Financial Guidance</title>
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* =====================
-       EDUCATE.AI-LEVEL DESIGN SYSTEM
-       Premium • Minimal • Confident
-    ====================== */
     :root {
-      --ink: #0b1220;
-      --ink-soft: #1f2937;
-      --accent: #3b82f6; /* electric blue */
-      --accent-2: #22c55e; /* calm green */
-
-      --bg: #f8fafc;
-      --bg-glass: rgba(255,255,255,0.72);
-      --bg-dark: #020617;
-
-      --text: #020617;
-      --muted: #64748b;
-
-      --radius-lg: 22px;
-      --radius-md: 14px;
-
-      --shadow-soft: 0 12px 30px rgba(2,6,23,0.08);
-      --shadow-strong: 0 30px 60px rgba(2,6,23,0.18);
-    }
-
-    body.dark {
-      --bg: #020617;
-      --bg-glass: rgba(15,23,42,0.75);
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-      --ink: #e5e7eb;
+      --primary: #1f4fff;
+      --accent: #00c896;
+      --bg-light: #f6f8fb;
+      --bg-dark: #0f1420;
+      --text-light: #1c1e21;
+      --text-dark: #eaeaf0;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-light);
+      line-height: 1.6;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 10px 0;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    body.dark .top-bar {
+      background: rgba(15,20,32,0.95);
+    }
+
+    #themeToggle {
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .contact-icons {
+      display: flex;
+      gap: 18px;
+    }
+
+    .contact-icons img {
+      width: 22px;
+      height: 22px;
+      opacity: 0.75;
+      transition: all 0.2s ease;
+    }
+
+    .contact-icons img:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    body.dark .contact-icons img {
+      filter: invert(1);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 20px 60px;
       background:
-        radial-gradient(900px 400px at 10% -10%, rgba(59,130,246,0.12), transparent 60%),
-        radial-gradient(900px 400px at 90% 10%, rgba(34,197,94,0.10), transparent 60%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      transition: background 0.4s ease, color 0.3s ease;
+        linear-gradient(to bottom, rgba(246,248,251,0.85), rgba(246,248,251,1)),
+        url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d1') center/cover no-repeat;
     }
 
-    /* ===================== HERO ===================== */
-    header {
-  padding: 120px 20px 110px;
-  text-align: center;
-  position: relative;
-  background:
-    linear-gradient(180deg, rgba(248,250,252,0.85), rgba(248,250,252,0.95)),
-    radial-gradient(900px 400px at 20% -10%, rgba(59,130,246,0.14), transparent 60%),
-    radial-gradient(900px 400px at 80% 10%, rgba(34,197,94,0.12), transparent 60%),
-    url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1600&q=70');
-  background-size: cover;
-  background-position: center;
-}
-
-header::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(248,250,252,0.15), rgba(248,250,252,0.85));
-  pointer-events: none;
-}
-
-header > * {
-  position: relative;
-  z-index: 1;
-}
-
-body.dark header {
-  background:
-    linear-gradient(180deg, rgba(2,6,23,0.75), rgba(2,6,23,0.9)),
-    radial-gradient(900px 400px at 20% -10%, rgba(59,130,246,0.18), transparent 60%),
-    radial-gradient(900px 400px at 80% 10%, rgba(34,197,94,0.14), transparent 60%),
-    url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1600&q=70');
-  background-size: cover;
-  background-position: center;
-}
-
-    header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(248,250,252,0.3), rgba(248,250,252,0.85));
-      pointer-events: none;
-    }
-
-    header > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    body.dark header {
+    body.dark .hero {
       background:
-        linear-gradient(180deg, rgba(2,6,23,0.85), rgba(2,6,23,0.92)),
-        radial-gradient(900px 400px at 20% -10%, rgba(59,130,246,0.18), transparent 65%),
-        radial-gradient(900px 400px at 80% 10%, rgba(34,197,94,0.14), transparent 65%),
-        url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1600&q=70');
-      background-size: cover;
-      background-position: center;
+        linear-gradient(to bottom, rgba(15,20,32,0.85), rgba(15,20,32,1)),
+        url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d1') center/cover no-repeat;
     }
 
-    header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(248,250,252,0.4), rgba(248,250,252,0.95));
-      pointer-events: none;
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
     }
 
-    body.dark header {
-      background:
-        linear-gradient(180deg, rgba(2,6,23,0.85), rgba(2,6,23,0.95)),
-        radial-gradient(900px 400px at 20% -10%, rgba(59,130,246,0.18), transparent 60%),
-        radial-gradient(900px 400px at 80% 10%, rgba(34,197,94,0.14), transparent 60%),
-        url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1600&q=70');
-      background-size: cover;
-      background-position: center;
-    }
-
-    header h1 {
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      margin-bottom: 18px;
-      letter-spacing: -0.5px;
-      background: linear-gradient(135deg, var(--ink), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    body.dark header h1 {
-      background: linear-gradient(135deg, #e5e7eb, #60a5fa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    header p {
-      max-width: 640px;
-      margin: 0 auto 40px;
-      font-size: 1.15rem;
-      color: var(--muted);
+    .hero p {
+      max-width: 600px;
+      font-size: 18px;
+      opacity: 0.85;
     }
 
     .cta {
-      background: linear-gradient(135deg, var(--accent), #60a5fa);
+      margin-top: 30px;
+      padding: 14px 34px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
       color: white;
-      padding: 16px 36px;
-      border-radius: 999px;
-      text-decoration: none;
+      border-radius: 30px;
       font-weight: 600;
-      box-shadow: var(--shadow-strong);
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     }
 
-    /* ===================== SECTIONS ===================== */
+    /* SECTIONS */
     section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 90px 20px;
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
     }
 
     h2 {
       text-align: center;
-      font-size: 1.9rem;
-      margin-bottom: 45px;
-      letter-spacing: -0.3px;
+      margin-bottom: 40px;
     }
 
-    .grid {
+    .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 26px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
     }
 
     .card {
-      background: var(--bg-glass);
-      backdrop-filter: blur(10px);
-      padding: 34px;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      padding: 30px;
+      border-radius: 16px;
+      background: white;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-strong);
+    body.dark .card {
+      background: #151a2a;
     }
 
-    .card h3 {
-      margin-top: 0;
-      font-size: 1.15rem;
-      letter-spacing: -0.2px;
+    /* TRUST STRIP */
+    .trust {
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.75;
+      margin-top: 40px;
     }
 
-    .muted { color: var(--muted); }
-
-    /* ===================== FOOTER ===================== */
-    footer {
-      border-top: 1px solid rgba(100,116,139,0.15);
-      padding: 50px 20px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    footer p { max-width: 1100px; margin: auto; }
-
-    /* ===================== UI ELEMENTS ===================== */
+    /* STICKY WHATSAPP */
     .whatsapp {
       position: fixed;
-      bottom: 22px;
-      right: 22px;
-      background: linear-gradient(135deg, #25d366, #1ebd5a);
-      color: white;
-      width: 60px;
-      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      background: #25d366;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
-      text-decoration: none;
-      box-shadow: var(--shadow-strong);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       z-index: 999;
     }
 
-    .toggle {
-      position: fixed;
-      top: 18px;
-      right: 18px;
-      background: var(--bg-glass);
-      border-radius: 999px;
-      padding: 6px 14px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      box-shadow: var(--shadow-soft);
-    }
-  
-
-    /* ===================== CONTACT BAR ===================== */
-    .contact-bar {
-      position: sticky;
-      top: 0;
-      z-index: 998;
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 14px;
-      background: var(--bg-glass);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(100,116,139,0.15);
-      font-size: 0.85rem;
+    .whatsapp img {
+      width: 28px;
+      filter: invert(1);
     }
 
-    .contact-bar a {
-      text-decoration: none;
-      font-weight: 600;
-      color: var(--accent);
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 13px;
+      opacity: 0.6;
     }
-
-    .contact-text {
-      color: var(--muted);
-      font-weight: 500;
-    }
-
   </style>
 </head>
-
 <body>
-  <div class="toggle" onclick="toggleDark()">🌙 / ☀️</div>
 
-  <!-- TOP CONTACT BAR -->
-  <div class="contact-bar">
-    <span class="contact-text">Talk to us privately:</span>
-    <a href="https://wa.me/26776328862" target="_blank">WhatsApp</a>
-    <a href="mailto:lechiilekano@gmail.com">Email</a>
-    <a href="" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/forthesakeoftopics" target="_blank">Instagram</a>
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <button id="themeToggle">🌙</button>
+    <div class="contact-icons">
+      <a href="https://wa.me/26776328862" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg">
+      </a>
+      <a href="mailto:lechiilekano@gmail.com">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg">
+      </a>
+      <a href="https://instagram.com/forthesakeoftopics" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg">
+      </a>
+    </div>
   </div>
 
   <!-- HERO -->
-  <header>
-  <div class="top-contact">
-    <span>Talk to us privately:</span>
-    <a href="https://wa.me/26776328862" target="_blank">WhatsApp</a>
-    <a href="mailto:lechiilekano@gmail.com">Email</a>
-    <a href="https://instagram.com/forthesakeoftopics" target="_blank">Instagram</a>
-    <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+  <div class="hero">
+    <h1>KC Finance</h1>
+    <p>Private financial guidance for working people who want clarity, control, and confidence — without pressure.</p>
+    <a href="#how" class="cta">See How This Works</a>
   </div>
 
-  <h1>KC Finance</h1>
-  <p class="hero-sub">Private financial assistance for working people who need clarity, not pressure.</p>
-  <a href="#how" class="cta">See How This Works</a>
-</header>
-
-  <!-- TRUST BLOCK -->
-  <section id="trust">
-    <h2>Before money, respect</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Confidential by default</h3>
-        <p class="muted">
-          Conversations stay private. No shaming. No exposure. Your situation
-          is handled with dignity.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Small by design</h3>
-        <p class="muted">
-          We work with realistic amounts (up to P500) to reduce risk, pressure,
-          and long-term damage.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Human review</h3>
-        <p class="muted">
-          Decisions are not automated. A real person looks at your case before
-          anything is agreed.
-        </p>
-      </div>
+  <!-- HOW -->
+  <section id="how">
+    <h2>How It Works</h2>
+    <div class="cards">
+      <div class="card">You reach out privately. No public forms. No pressure.</div>
+      <div class="card">We understand your situation and goals.</div>
+      <div class="card">You receive clear, respectful financial direction.</div>
     </div>
   </section>
 
-  <!-- PSYCHOLOGY SECTION -->
+  <!-- TRUST -->
   <section>
-    <h2>Why most people get this wrong</h2>
-    <div class="grid">
-      <div class="card">
-        <p>
-          Most financial problems are not caused by irresponsibility — they are
-          caused by timing.
-        </p>
-      </div>
-      <div class="card">
-        <p>
-          When pressure hits, people borrow too much, too fast, from the wrong
-          places.
-        </p>
-      </div>
-      <div class="card">
-        <p>
-          KC Finance exists to interrupt that cycle before it gets worse.
-        </p>
-      </div>
+    <h2>Why KC Finance</h2>
+    <div class="cards">
+      <div class="card">Confidential & respectful communication</div>
+      <div class="card">No sales pressure, ever</div>
+      <div class="card">Built for real people, not hype</div>
     </div>
+    <div class="trust">We do not request upfront payments. Conversations remain private.</div>
   </section>
 
-  <!-- SERVICES (FRAMED AS PATH) -->
-  <section>
-    <h2>How we help</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Short-term relief</h3>
-        <p class="muted">
-          Small, controlled loans meant to stabilize — not trap — you.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Financial clarity</h3>
-        <p class="muted">
-          Clear explanations around debt, spending, and next steps — without
-          judgment.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Ongoing support</h3>
-        <p class="muted">
-          Trusted clients can access higher limits and longer-term assistance
-          over time.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- WHATSAPP -->
+  <a class="whatsapp" href="https://wa.me/26776328862" target="_blank">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg">
+  </a>
 
-  <!-- AUTHORITY WITHOUT CLAIMS -->
-  <section>
-    <h2>This is not for everyone</h2>
-    <div class="grid">
-      <div class="card">
-        <p>
-          If you are looking for instant cash with no responsibility, this is
-          not for you.
-        </p>
-      </div>
-      <div class="card">
-        <p>
-          If you want clarity, privacy, and realistic help — you are in the
-          right place.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section id="start">
-    <h2>Start privately</h2>
-    <div class="card" style="text-align: center;">
-      <p class="muted">
-        The first step is a conversation. Nothing is agreed until you are
-        comfortable.
-      </p>
-      <p><strong>WhatsApp: 76328862</strong></p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
-    <p>
-      KC Finance provides small-scale financial assistance and guidance. We are
-      not a bank. Loan amounts, terms, and availability are subject to review.
-      Some services may be offered through referrals or partners. All
-      information shared is treated confidentially and respectfully.
-    </p>
+    © 2025 KC Finance · Private Financial Guidance
   </footer>
 
-  <a class="whatsapp" href="https://wa.me/26776328862" target="_blank">💬</a>
-
   <script>
-    function toggleDark() {
+    const toggle = document.getElementById('themeToggle');
+    toggle.onclick = () => {
       document.body.classList.toggle('dark');
-    }
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    };
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
   </script>
+
 </body>
 </html>
